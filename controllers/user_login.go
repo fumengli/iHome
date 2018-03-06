@@ -40,10 +40,10 @@ func (this *LoginUserController) LoginUser() {
 		return
 	}
 	//3 从mysql中查询数据
-	user := models.User{Name: regRequestMap["mobile"].(string)}
+	user := models.User{Mobile: regRequestMap["mobile"].(string)}
 
 	o := orm.NewOrm()
-	err := o.Read(&user, "Name")
+	err := o.Read(&user, "Mobile")
 	if err != nil {
 		beego.Info("Read error = ", err)
 		retmsg["errno"] = models.RECODE_NODATA
@@ -66,8 +66,9 @@ func (this *LoginUserController) LoginUser() {
 		return
 	}
 	//4 将当前的用户的信息存储到session中
-	this.SetSession("name", user.Mobile)
+	this.SetSession("name", user.Name)
 	this.SetSession("user_id", user.Id)
 	this.SetSession("mobile", user.Mobile)
+	this.SaveToFile("avatar_url", user.Avatar_url)
 	return
 }

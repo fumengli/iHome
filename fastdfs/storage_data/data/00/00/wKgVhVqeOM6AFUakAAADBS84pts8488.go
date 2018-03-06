@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
-	"iHome/models"
+	_ "iHome/models"
 	_ "iHome/routers"
 	"net/http"
 	"strings"
@@ -11,9 +11,6 @@ import (
 
 func main() {
 	ignoreStaticPath()
-	str := models.GetServerUrl()
-	beego.Info("==============", str)
-	beego.SetStaticPath("/group1/M00", "fastdfs/storage_data/data")
 	beego.Run()
 }
 
