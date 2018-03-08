@@ -11,6 +11,7 @@ import (
 
 func main() {
 	ignoreStaticPath()
+
 	beego.SetStaticPath("/group1/M00", "fastdfs/storage_data/data")
 	beego.Run()
 }

@@ -32,10 +32,11 @@ func (this *LoadUserController) LoadUser() {
 	} else {
 		beego.Info("name is empty")
 	}
+	url, _ := models.GetUrl()
 	curuser.Id = this.GetSession("user_id").(int)
 	curuser.Mobile = this.GetSession("mobile").(string)
 	if tmp := this.GetSession("avatar_url"); tmp == nil {
-		curuser.Avatar_url = "http://192.168.21.133:8080/static/images/defaultAvatar.jpg"
+		curuser.Avatar_url = "http://" + url + "static/images/defaultAvatar.jpg"
 		this.SetSession("avatar_url", curuser.Avatar_url)
 	}
 	curuser.Avatar_url = this.GetSession("avatar_url").(string)

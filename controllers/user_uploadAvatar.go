@@ -53,8 +53,9 @@ func (this *UploadAvatarController) UploadAvatar() {
 	//3.1头像更新到session
 	this.SetSession("avatar_url", curUser.Avatar_url)
 	//4 生成返回数据
+	url, _ := models.GetUrl()
 	retUrl := make(map[string]interface{})
-	retUrl["avatar_url"] = "http://192.168.21.133:8080/" + fileID
+	retUrl["avatar_url"] = "http://" + url + fileID
 	retmsg["data"] = retUrl
 
 	return
