@@ -95,11 +95,15 @@ type OrderHouse struct {
 	Ctime       time.Time `orm:"auto_now_add;type(datetime)" json:"ctime"`
 }
 
+const (
+	mysqlIp   = "192.168.69.233"
+	mysqlPort = "3306"
+)
+
 func init() {
+
 	orm.RegisterDataBase("default", "mysql", "root:123456@tcp(127.0.0.1:3306)/ihome?charset=utf8", 30)
-
 	orm.RegisterModel(new(User), new(House), new(HouseImage), new(Area), new(Facility), new(OrderHouse))
-
 	// create table
 	orm.RunSyncdb("default", false, true)
 

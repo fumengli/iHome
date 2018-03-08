@@ -41,6 +41,11 @@ func (this *SessionController) DelSessionName() {
 	this.DelSession("name")
 	this.DelSession("user_id")
 	this.DelSession("mobile")
+	this.DelSession("Password_hash")
+	this.DelSession("Real_name")
+	this.DelSession("Id_card")
+	this.DelSession("avatar_url")
+
 	return
 
 }

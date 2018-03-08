@@ -35,12 +35,18 @@ func (this *LoadUserController) LoadUser() {
 	url, _ := models.GetUrl()
 	curuser.Id = this.GetSession("user_id").(int)
 	curuser.Mobile = this.GetSession("mobile").(string)
-	if tmp := this.GetSession("avatar_url"); tmp == nil {
+
+	//if tmp := this.GetSession("avatar_url"); tmp == nil {
+	if this.GetSession("avatar_url") == "" {
 		curuser.Avatar_url = "http://" + url + "static/images/defaultAvatar.jpg"
+		beego.Info("USE default!url=", curuser.Avatar_url)
 		this.SetSession("avatar_url", curuser.Avatar_url)
 	}
 	curuser.Avatar_url = this.GetSession("avatar_url").(string)
-
+	curuser.Real_name = this.GetSession("real_name").(string)
+	curuser.Id_card = this.GetSession("id_card").(string)
+	curuser.Password_hash = this.GetSession("password").(string)
+	//组织结构体返回
 	retmsg["data"] = curuser
 	return
 }

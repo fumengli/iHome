@@ -69,6 +69,9 @@ func (this *LoginUserController) LoginUser() {
 	this.SetSession("name", user.Name)
 	this.SetSession("user_id", user.Id)
 	this.SetSession("mobile", user.Mobile)
-	this.SaveToFile("avatar_url", user.Avatar_url)
+	this.SetSession("avatar_url", user.Avatar_url)
+	this.SetSession("real_name", user.Real_name)
+	this.SetSession("id_card", user.Id_card)
+	this.SetSession("password", user.Password_hash)
 	return
 }
