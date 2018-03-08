@@ -338,3 +338,8 @@ data path: /home/fml/workspace/go/src/iHome/fastdfs/storage_data/data, mkdir sub
 [2018-03-08 10:24:10] INFO - file: storage_func.c, line: 257, tracker_client_ip: 192.168.69.119, my_server_id_str: 192.168.69.119, g_server_id_in_filename: 2001053888
 [2018-03-08 10:24:10] INFO - file: tracker_client_thread.c, line: 310, successfully connect to tracker server 192.168.69.119:22122, as a tracker client, my ip is 192.168.69.119
 [2018-03-08 10:24:40] INFO - file: tracker_client_thread.c, line: 1263, tracker server 192.168.69.119:22122, set tracker leader: 192.168.69.119:22122
+[2018-03-08 10:36:24] CRIT - file: fdfs_storaged.c, line: 474, catch signal 15, program exiting...
+[2018-03-08 10:36:25] INFO - file: fdfs_storaged.c, line: 526, catch signal 1, rotate log
+[2018-03-08 10:37:25] ERROR - file: tracker_client_thread.c, line: 1148, tracker server 192.168.69.119:22122, recv data fail, errno: 110, error info: Connection timed out.
+[2018-03-08 10:37:25] INFO - exit normally.
+
