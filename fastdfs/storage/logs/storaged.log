@@ -364,3 +364,7 @@ data path: /home/fml/workspace/go/src/iHome/fastdfs/storage_data/data, mkdir sub
 [2018-03-08 20:27:58] ERROR - file: storage_nio.c, line: 282, client ip: 192.168.21.133, recv timeout, recv offset: 0, expect length: 0
 [2018-03-08 20:27:58] ERROR - file: storage_nio.c, line: 282, client ip: 192.168.21.133, recv timeout, recv offset: 0, expect length: 0
 [2018-03-08 20:27:58] ERROR - file: storage_nio.c, line: 282, client ip: 192.168.21.133, recv timeout, recv offset: 0, expect length: 0
+[2018-03-08 22:37:33] CRIT - file: fdfs_storaged.c, line: 474, catch signal 15, program exiting...
+[2018-03-08 22:37:34] INFO - file: fdfs_storaged.c, line: 526, catch signal 1, rotate log
+[2018-03-08 22:37:34] INFO - exit normally.
+

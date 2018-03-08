@@ -80,3 +80,7 @@
 [2018-03-08 20:26:20] ERROR - file: tracker_nio.c, line: 213, client ip: 192.168.21.133, recv timeout, recv offset: 0, expect length: 0
 [2018-03-08 20:26:20] ERROR - file: tracker_nio.c, line: 213, client ip: 192.168.21.133, recv timeout, recv offset: 0, expect length: 0
 [2018-03-08 20:26:20] ERROR - file: tracker_nio.c, line: 213, client ip: 192.168.21.133, recv timeout, recv offset: 0, expect length: 0
+[2018-03-08 22:37:33] CRIT - file: fdfs_trackerd.c, line: 450, catch signal 15, program exiting...
+[2018-03-08 22:37:34] INFO - file: fdfs_trackerd.c, line: 462, catch signal 1, rotate log
+[2018-03-08 22:37:34] INFO - exit normally.
+
