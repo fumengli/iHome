@@ -1,8 +1,8 @@
-# storage 192.168.21.133:23000
+# storage 192.168.69.119:23000
 [Storage001]
 	group_name=group1
-	ip_addr=192.168.21.133
-	status=7
+	ip_addr=192.168.69.119
+	status=5
 	version=5.10
 	join_time=1520318299
 	storage_port=23000
@@ -14,9 +14,9 @@
 	subdir_count_per_path=256
 	upload_priority=10
 	total_mb=56315
-	free_mb=44187
-	total_upload_count=12
-	success_upload_count=12
+	free_mb=44186
+	total_upload_count=15
+	success_upload_count=15
 	total_append_count=0
 	success_append_count=0
 	total_set_meta_count=0
@@ -31,8 +31,8 @@
 	success_create_link_count=0
 	total_delete_link_count=0
 	success_delete_link_count=0
-	total_upload_bytes=633114
-	success_upload_bytes=633114
+	total_upload_bytes=1146724
+	success_upload_bytes=1146724
 	total_append_bytes=0
 	success_append_bytes=0
 	total_download_bytes=0
@@ -41,17 +41,17 @@
 	success_sync_in_bytes=0
 	total_sync_out_bytes=0
 	success_sync_out_bytes=0
-	total_file_open_count=12
-	success_file_open_count=12
+	total_file_open_count=15
+	success_file_open_count=15
 	total_file_read_count=0
 	success_file_read_count=0
-	total_file_write_count=12
-	success_file_write_count=12
-	last_source_update=1520337951
+	total_file_write_count=16
+	success_file_write_count=16
+	last_source_update=1520474728
 	last_sync_update=0
 	last_synced_timestamp=0
-	last_heart_beat_time=1520431083
-	changelog_offset=0
+	last_heart_beat_time=1520475307
+	changelog_offset=50
 
 
 # global section
