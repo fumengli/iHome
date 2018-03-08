@@ -29,6 +29,7 @@ func (this *AreasController) GetAreas() {
 	retmsg["errmsg"] = models.RecodeText(models.RECODE_OK)
 	defer this.RetrunData(retmsg)
 	//1.尝试先从redis中读数据
+	//url, _ := models.GetUrl()
 	//{"key":"collectionName","conn":":6039","dbNum":"0","password":"thePassWord"}
 	rd, err := cache.NewCache("redis", `{"key":"iHome","conn":"127.0.0.1:6379","dbNum":"0"}`)
 	if err != nil {
