@@ -62,16 +62,16 @@ func (this *UploadHouseInfoController) UpHouseInfo() {
 	house.User = &user
 	house.Area = &area
 	house.Title = uploadHouseData["title"].(string)
-	house.Price = uploadHouseData["price"].(int)
+	house.Price, _ = strconv.Atoi(uploadHouseData["price"].(string))
 	house.Address = uploadHouseData["address"].(string)
-	house.Room_count = uploadHouseData["room_count"].(int)
-	house.Acreage = uploadHouseData["acreage"].(int)
+	house.Room_count, _ = strconv.Atoi(uploadHouseData["room_count"].(string))
+	house.Acreage, _ = strconv.Atoi(uploadHouseData["acreage"].(string))
 	house.Unit = uploadHouseData["unit"].(string)
-	house.Capacity = uploadHouseData["capacity"].(int)
+	house.Capacity, _ = strconv.Atoi(uploadHouseData["capacity"].(string))
 	house.Beds = uploadHouseData["beds"].(string)
-	house.Deposit = uploadHouseData["deposit"].(int)
-	house.Min_days = uploadHouseData["min_days"].(int)
-	house.Max_days = uploadHouseData["max_days"].(int)
+	house.Deposit, _ = strconv.Atoi(uploadHouseData["deposit"].(string))
+	house.Min_days, _ = strconv.Atoi(uploadHouseData["min_days"].(string))
+	house.Max_days, _ = strconv.Atoi(uploadHouseData["max_days"].(string))
 
 	//数据库中插入房屋信息
 	id, err := o.Insert(&house)
@@ -85,9 +85,9 @@ func (this *UploadHouseInfoController) UpHouseInfo() {
 	//房屋设施
 	facilitys := make([]*models.Facility, 0)
 	//房屋设施编号获取数据
-	faciCode := uploadHouseData["facility"].([]string)
+	faciCode := uploadHouseData["facility"].([]interface{})
 	for i := 0; i < len(faciCode); i++ {
-		fid, _ := strconv.Atoi(faciCode[i])
+		fid, _ := strconv.Atoi(faciCode[i].(string))
 		faci := models.Facility{Id: fid}
 		if err := o.Read(&faci); err != nil {
 			beego.Info("read facility err")
@@ -100,7 +100,7 @@ func (this *UploadHouseInfoController) UpHouseInfo() {
 	}
 	//房屋信息中心插入房屋设施信息
 	m_house := models.House{Id: int(id)}
-	m2m := o.QueryM2M(&m_house, "Facilitys")
+	m2m := o.QueryM2M(&m_house, "Facilities")
 	num, err := m2m.Add(facilitys)
 	if err == nil {
 		beego.Info("Added nums: ", num)
