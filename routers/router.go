@@ -31,5 +31,6 @@ func init() {
 	//====================House========================
 	//初始化   api/v1.0/houses/index
 	beego.Router("/api/v1.0/houses/index", &controllers.HouseIndexController{}, "get:GetHouseIndex")
-
+	//上传房源信息
+	beego.Router("/api/v1.0/houses", &controllers.UploadHouseInfoController{}, "post:UpHouseInfo")
 }
