@@ -31,6 +31,7 @@ func (this *LoadUserController) LoadUser() {
 		curuser.Name = this.GetSession("name").(string)
 	} else {
 		beego.Info("name is empty")
+		return
 	}
 	url, _ := models.GetUrl()
 	curuser.Id = this.GetSession("user_id").(int)
