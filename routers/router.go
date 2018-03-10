@@ -33,4 +33,8 @@ func init() {
 	beego.Router("/api/v1.0/houses/index", &controllers.HouseIndexController{}, "get:GetHouseIndex")
 	//上传房源信息
 	beego.Router("/api/v1.0/houses", &controllers.UploadHouseInfoController{}, "post:UpHouseInfo")
+	//得到房源详细信息   GetHouseDetailsController
+	beego.Router("/api/v1.0/houses/:id([0-9]+)", &controllers.GetHouseDetailsController{}, "get:GetHouseDetails")
+	//上传房屋图片
+	beego.Router("/api/v1.0/houses/:id/images", &controllers.HouseImageController{}, "post:UploadImage")
 }

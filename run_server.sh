@@ -1,6 +1,6 @@
 #!/bin/bash
 # 启动redis
-#redis-server ./conf/redis.conf 
+redis-server ./conf/redis.conf 
 # 启动fastdfs [tracker]
 #fdfs_trackerd ./conf/tracker.conf
 fdfs_trackerd /home/fml/workspace/go/src/iHome/conf/tracker.conf
